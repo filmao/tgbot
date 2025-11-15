@@ -3,6 +3,8 @@ import re
 import time
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 import os
+import logging
+logging.basicConfig(level=logging.INFO)
 
 TOKEN = os.getenv("BOT_TOKEN")  # токен из Render
 CHANNEL_ID = -1003458990833
@@ -115,4 +117,4 @@ def handle_text(message):
         user_state[user_id] = None
 
 
-bot.polling(none_stop=True, interval=0, timeout=20)
+bot.infinity_polling(timeout=20, long_polling_timeout=20)
