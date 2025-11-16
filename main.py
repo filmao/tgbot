@@ -7,8 +7,8 @@ import logging
 logging.basicConfig(level=logging.INFO)
 
 TOKEN = os.getenv("BOT_TOKEN")  # токен из Render
-CHANNEL_ID = -1003458990833
-ADMIN_ID = 8339987136
+CHANNEL_ID = os.getenv("CHANNEL_ID")
+ADMIN_ID = os.getenv("ADMIN_ID")
 
 bot = telebot.TeleBot(TOKEN, threaded=True)
 
